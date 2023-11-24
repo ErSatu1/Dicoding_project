@@ -1,9 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
-sns.set(style='dark')
 import datetime
 
 
@@ -195,7 +193,7 @@ st.subheader('Komposisi Udara pada Kota %s'%nama)
 fig, ax = plt.subplots(figsize=(16, 8))
 labels = mean_values.index
 sizes = mean_values.values
-colors = sns.color_palette("Set2")
+colors = ['#FFF689', '#E03616', '#58355E', '#5998C5']
 explode = (0.1, 0.1, 0.1, 0.1)
 plt.pie(sizes, labels=labels, colors=colors, autopct=lambda p: '{:.1f}%'.format(p) if p > 0 else '', explode=explode)
 plt.title('Komposisi Udara kota %s' % nama)
